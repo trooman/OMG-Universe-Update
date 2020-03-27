@@ -99,8 +99,13 @@
       </div>
       <!-- SERVICES-BLOCK -->
       <div class="sevices-block">
+        <div id="tabs">
+          <div class="services-tab services-active" data-btn="1"></div>
+          <div class="services-tab" data-btn="2"></div>
+          <div class="services-tab" data-btn="3"></div>
+        </div>
         <div class="services-info">
-          <div class="services-info__block wow rotateInUpLeft">
+          <div class="services-info__block services-active" data-content="1">
             <div class="services-titletext">
               <!-- <img class="services-icon" src="img/services/eyebrow.svg" alt=""> -->
               <h2 class="services-info__title">Брови</h2>
@@ -138,7 +143,7 @@
               </ul>
             </div>
           </div>
-          <div class="services-info__block wow rotateInUpRight">
+          <div class="services-info__block" data-content="2">
             <div class="services-titletext">
               <!-- <img class="services-icon" src="img/services/eye.svg" alt=""> -->
               <h2 class="services-info__title">Глаза</h2>
@@ -171,7 +176,7 @@
               </ul>
             </div>
           </div>
-          <div class="services-info__block wow rotateInUpLeft">
+          <div class="services-info__block" data-content="3">
             <div class="services-titletext">
               <!-- <img class="services-icon" src="img/services/kiss.svg" alt=""> -->
               <h2 class="services-info__title">Губы</h2>
@@ -207,9 +212,9 @@
             </div>
           </div>
         </div>
-        </div>
       </div>
-      <!-- SERVICES-BLOCK-END -->
+    </div>
+    <!-- SERVICES-BLOCK-END -->
     </div>
   </section>
   <!-- SERVICES -->
@@ -382,19 +387,6 @@
 
 
   <script src="js/main.js"></script>
-
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
-  <script src="js/slick.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      $(".slider").slick({
-        slidesToShow: 2,
-        slidesToScroll: 2
-      });
-    });
-  </script>
 </body>
 
 </html>

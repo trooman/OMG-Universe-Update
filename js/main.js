@@ -54,24 +54,18 @@ findUs.onclick = function () {
 }
 
 
-
+// Swoh/Hide Pictures
 let openButton = document.querySelector('.services-img-link'),
   popup = document.querySelector('.popup'),
   close = document.querySelector('.close');
 
 openButton.onclick = function () {
   popup.style.display = 'block';
-}
+};
 
 close.onclick = function () {
   popup.style.display = 'none';
-}
-
-// window.onclick = function (e) {
-//   if (e.target == popup) popup.style.display = 'none';
-// }
-
-
+};
 
 
 let openButton2 = document.querySelector('.services-img-link2'),
@@ -80,14 +74,11 @@ let openButton2 = document.querySelector('.services-img-link2'),
 
 openButton2.onclick = function () {
   popup2.style.display = 'block';
-}
+};
 
 close2.onclick = function () {
   popup2.style.display = 'none';
-}
-
-
-
+};
 
 
 let openButton3 = document.querySelector('.services-img-link3'),
@@ -96,13 +87,11 @@ let openButton3 = document.querySelector('.services-img-link3'),
 
 openButton3.onclick = function () {
   popup3.style.display = 'block';
-}
+};
 
 close3.onclick = function () {
   popup3.style.display = 'none';
-}
-
-
+};
 
 
 let openButton4 = document.querySelector('.services-img-link4'),
@@ -111,13 +100,11 @@ let openButton4 = document.querySelector('.services-img-link4'),
 
 openButton4.onclick = function () {
   popup4.style.display = 'block';
-}
+};
 
 close4.onclick = function () {
   popup4.style.display = 'none';
-}
-
-
+};
 
 
 let openButton5 = document.querySelector('.services-img-link5'),
@@ -126,11 +113,11 @@ let openButton5 = document.querySelector('.services-img-link5'),
 
 openButton5.onclick = function () {
   popup5.style.display = 'block';
-}
+};
 
 close5.onclick = function () {
   popup5.style.display = 'none';
-}
+};
 
 
 
@@ -140,27 +127,32 @@ let openButton6 = document.querySelector('.services-img-link6'),
 
 openButton6.onclick = function () {
   popup6.style.display = 'block';
-}
+};
 
 close6.onclick = function () {
   popup6.style.display = 'none';
-}
+};
 
 
-// Tabulation
-// let accordeonArrow = document.querySelectorAll('.services-accordeon-button');
-let servicesInfoBlock = document.querySelector('.services-info__block');
-let servicesDescription = document.querySelectorAll('.services-description');
-let servicesDescriptionList = document.querySelectorAll('.services-description__list');
+// TABS for services
 
-// accordeonArrow.onclick = function() {
-//   accordeonArrow.innerHTML = '⇧';
-// }
+let tabs = document.getElementById('tabs');
+let servicesBlock = document.querySelectorAll('.services-info__block');
 
-for (let i = 0; i <= servicesDescriptionList.length; i++) {
-  servicesDescriptionList[i].onclick = function() {
-    this.classList.toggle('active');
-
-    this.nextElementSibling.classList.toggle('show')
+function changeServicesContent(element) {
+  for (let i = 0; i < tabs.children.length; i++) {
+    tabs.children[i].classList.remove('services-active');
   }
-}
+  element.classList.add('services-active');
+};
+
+tabs.addEventListener('click', function (event) {
+  let currentTab = event.target.dataset.btn;
+  changeServicesContent(event.target);
+  for (let i = 0; i < servicesBlock.length; i++) {
+    servicesBlock[i].classList.remove('services-active');
+    if (servicesBlock[i].dataset.content === currentTab) {
+      servicesBlock[i].classList.add('services-active');
+    }
+  }
+});
