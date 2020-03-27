@@ -148,6 +148,7 @@ function changeServicesContent(element) {
 
 tabs.addEventListener('click', function (event) {
   let currentTab = event.target.dataset.btn;
+  if (!currentTab) return; /* fix for #tabs*/
   changeServicesContent(event.target);
   for (let i = 0; i < servicesBlock.length; i++) {
     servicesBlock[i].classList.remove('services-active');
